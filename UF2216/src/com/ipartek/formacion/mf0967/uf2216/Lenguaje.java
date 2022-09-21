@@ -3,17 +3,157 @@ package com.ipartek.formacion.mf0967.uf2216;
 //import java.lang.*; Import implícito
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
 
+//import java.util.ArrayList;
+//import java.util.Calendar;
+//import java.util.Date;
+//import java.util.GregorianCalendar;
+//import java.util.HashMap;
+//import java.util.HashSet;
+//import java.util.List;
+//import java.util.Map;
+//import java.util.Set;
+
+import java.util.*;
 
 public class Lenguaje {
 
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Dime tu nombre: ");
+		String nombre = sc.nextLine();
+		
+		System.out.println("Hola " + nombre);
+		
+		sc.close();
+	}
+	
+	@SuppressWarnings("null")
+	public static void mainExcepciones(String[] args) {
+		int div, a = 5, b = 2;
+		 
+		System.out.println("INICIO");
+		try {
+			String s = null;
+			
+			s.toUpperCase();
+			
+			int[] arr = { 1, 2, 3, 4 };
+			arr[5] = 50;
+			div = a / b;
+		} catch (ArithmeticException e) {
+			div = Integer.MAX_VALUE;
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("Imposible");
+			return;
+		} finally {
+			System.out.println("");
+		}
+		
+		System.out.println(div);
+
+		System.out.println("FIN");
+	}
+
+	public static void mainSentenciasControl(String[] args) {
+		int y = 1;
+		
+		while(y <= 10) {
+			System.out.println(y);
+			y++;
+		}
+		
+		for (int n = 1; n <= 10; n++) {
+			System.out.println(n);
+		}
+		
+		String[] arr = { "Uno", "Dos", "Tres"};
+		
+		for(int i = 0; i < arr.length; i++) {
+			System.out.println(arr[i]);
+		}
+		
+		// Java5
+		for(String s: arr) {
+			System.out.println(s);
+		}
+		
+		@SuppressWarnings("unused")
+		int mes = 4 , dias;
+		
+		switch (mes) {
+		case 2:
+			dias = 28;
+			break;
+		case 4: System.out.println("Abril");
+		case 6: System.out.println("Junio");
+		case 9:
+		case 11:
+			dias = 30;
+			break;
+		default:
+			dias = 31;
+		}
+		
+		for(String s: arr) {
+			System.out.println("Comparando" + s);
+			if("Dos".equals(s)) {
+				break;
+			}
+		}
+		
+		String s;
+		boolean encontrado = false;
+		
+		for (int i = 0; i < arr.length && !encontrado; i++) {
+			s = arr[i];
+			
+			System.out.println("Comparando" + s);
+			
+			if("Dos".equals(s)) {
+				encontrado = true;
+				System.out.println("Encontrado");
+			}
+		}
+		
+		
+	}
+	
+	public static void mainOperadores(String[] args) {
+		System.out.println(5 ^ 3);
+		
+		int x = 5;
+		
+		System.out.println(1 + x + 10);
+		
+		System.out.println(1 <= x && x <= 10);
+		
+		System.out.println(5 | 3); // 101 OR 011 = 111
+		
+		System.out.println(true ^ false);
+		
+		int y;
+		
+		System.out.println(y = x = 7);	
+
+		y = 5;
+		
+		System.out.println(x > y ? x : y);
+		
+		System.out.println(y++);
+		System.out.println(y);
+		
+		y = 5;
+		
+		System.out.println(++y);
+		System.out.println(y);
+	}
+	
 	public static void mainColecciones(String[] args) {
 		// Colecciones
+		
+		// Listas
 		List<Integer> l = new ArrayList<>();
 		
 		l.add(10);
@@ -21,7 +161,27 @@ public class Lenguaje {
 		l.add(30);
 		
 		System.out.println(l);
+		
+		System.out.println(l.get(0));
 	
+		// Conjuntos
+		Set<Double> s = new HashSet<>();
+		
+		s.add(5.4);
+		s.add(7.8);
+		s.add(5.4);
+		
+		System.out.println(s);
+		
+		// "Diccionarios"
+		Map<String, String> m = new HashMap<>();
+		
+		m.put("casa", "home");
+		m.put("perro", "dog");
+		
+		System.out.println(m);
+		
+		System.out.println(m.get("perro"));
 		
 	}
 	
