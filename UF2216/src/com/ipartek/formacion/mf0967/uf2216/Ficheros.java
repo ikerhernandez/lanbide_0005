@@ -1,6 +1,5 @@
 package com.ipartek.formacion.mf0967.uf2216;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +8,7 @@ import java.util.Scanner;
 
 public class Ficheros {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 
 //		String fichero = "C:\\trabajos\\nuevos";
 //		String fichero = "C:/trabajos/nuevos";
@@ -17,29 +16,34 @@ public class Ficheros {
 //		System.out.println(fichero);
 		
 		String fichero = "datos.txt";
-		
-		FileWriter fw = new FileWriter(fichero);
-		PrintWriter pw = new PrintWriter(fw);
-		
-		pw.println("Hola desde el nuevo fichero");
-		
-		pw.close();
-		
-		FileReader fr = new FileReader(fichero);
-//		BufferedReader br = new BufferedReader(fr);
-//		
-//		String linea;
-//		
-//		while((linea = br.readLine()) != null) {
-//			
-//			System.out.println("br: " + linea);
-//		}
-		
-		Scanner sc = new Scanner(fr);
-		
-		while (sc.hasNext()) {
-			System.out.println("sc: " + sc.nextLine());
+		PrintWriter pw = null;
+		try {
 			
+			FileWriter fw = new FileWriter(fichero);
+			pw = new PrintWriter(fw);
+			
+			pw.println("Hola desde el nuevo fichero");
+			
+		} catch (IOException e) {			
+			System.err.println("No se ha podido escribir el fichero");
+			
+		} finally {	
+			if(pw != null) {
+				pw.close();				
+			}
+		}
+		
+		
+		try ( 	FileReader fr = new FileReader(fichero);
+				Scanner sc = new Scanner(fr)) {
+			
+			while (sc.hasNext()) {
+				System.out.println("sc: " + sc.nextLine());
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 	}

@@ -7,6 +7,7 @@ public class Ejercicio7 {
 //	Ejercicio 7 Comprobar si dos números son amigos
 	public static void main(String[] args) {
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		
 		int i, suma = 0, num1, num2;
