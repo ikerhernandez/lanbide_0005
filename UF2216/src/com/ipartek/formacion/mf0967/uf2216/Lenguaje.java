@@ -40,6 +40,7 @@ public class Lenguaje {
 			s.toUpperCase();
 			
 			int[] arr = { 1, 2, 3, 4 };
+			
 			arr[5] = 50;
 			div = a / b;
 		} catch (ArithmeticException e) {
