@@ -1,4 +1,4 @@
-package com.ipartek.formacion.mf0967.uf2216.poo.EjerciciosBasicosPOO.Ejercicio1.pojos;
+package com.ipartek.formacion.mf0967.uf2216.EjerciciosBasicosPOO.Ejercicio1.pojos;
 
 public class Cuenta {
 
@@ -75,6 +75,22 @@ public class Cuenta {
 			TodoCorrecto = false;
 		}else {
 			saldo = saldo - n;
+		}
+		
+		return TodoCorrecto;
+	}
+	
+//	Metodo transferencia
+	public boolean transferencia(Cuenta c, double n) {
+		
+		boolean TodoCorrecto = true;
+		if(saldo < 0) {
+			TodoCorrecto = false;
+		}else if (saldo > n) {
+			reintegro(n);
+			c.ingreso(n);
+		}else {
+			TodoCorrecto = false;
 		}
 		
 		return TodoCorrecto;
