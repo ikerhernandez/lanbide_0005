@@ -65,7 +65,7 @@ public class LibroPresentacion {
         	pl("Se ha prestado el libro: "+ libro1.getTitulo());
         }else {
         	pl("No se ha podido prestar el libro: "+ libro1.getTitulo());
-        }
+        }																		
         
 //		Se muestran los datos de libro1
         pl("\nLibro1");
