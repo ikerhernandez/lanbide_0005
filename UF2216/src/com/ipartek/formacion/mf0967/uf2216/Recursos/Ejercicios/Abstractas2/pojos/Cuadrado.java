@@ -1,59 +1,53 @@
 package com.ipartek.formacion.mf0967.uf2216.Recursos.Ejercicios.Abstractas2.pojos;
 
-import java.math.BigDecimal;
-
-public class Cuadrado extends FiguraGeometrica {
+public class Cuadrado extends FiguraGeometrica implements Formulas {
 
 	
 //	----------------------------------------Variables
-	private int lado;
+	private double lado;
 	
 //	----------------------------------------Constructores
 	public Cuadrado() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
-	public Cuadrado(int nombre) {
+	public Cuadrado(String nombre, double lado) {
 		super(nombre);
-		// TODO Auto-generated constructor stub
-	}
-	
-//	----------------------------------------Getters & Setters
-	public int getLado() {
-		return lado;
-	}
-	
-	public void setLado(int lado) {
 		this.lado = lado;
 	}
 	
+//	----------------------------------------Getters & Setters
+	public double getLado() {
+		return lado;
+	}
 	
+	public void setLado(double lado) {
+		this.lado = lado;
+	}
 	
+//	----------------------------------------Funciones
+	public double area() {
+		return lado*lado;
+	}
 	
+	public double perimetro() {
+		return lado*4;
+	}
 	
-	
-	
-	
-	
-
-	//	----------------------------------------Metodos abstractos
+//	----------------------------------------Metodos abstractos
 	@Override
-	public BigDecimal calcularArea() {
-		// TODO Auto-generated method stub
-		return null;
+	public String calcularArea() {
+		return "Area de la figura: "+area();
 	}
 
 	@Override
-	public BigDecimal calcularPerimetro() {
-		// TODO Auto-generated method stub
-		return null;
+	public String calcularPerimetro() {
+		return "Perímetro de la figura: "+perimetro();
 	}
 
 	@Override
-	public BigDecimal mostrarInfo() {
-		// TODO Auto-generated method stub
-		return null;
+	public String mostrarInfo() {
+		return "Nombre de la figura: "+getNombre();
 	}
 
 

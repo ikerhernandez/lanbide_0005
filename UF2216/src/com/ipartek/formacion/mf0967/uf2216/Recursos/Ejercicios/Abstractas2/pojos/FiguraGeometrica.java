@@ -1,35 +1,33 @@
 package com.ipartek.formacion.mf0967.uf2216.Recursos.Ejercicios.Abstractas2.pojos;
 
-import java.math.BigDecimal;
-
 public abstract class FiguraGeometrica {
 	
 //	-----------------------Variables
-	private int nombre;
+	private String nombre;
 
 //	-----------------------Constructores
 	public FiguraGeometrica() {
 		
 	}
 	
-	public FiguraGeometrica(int nombre) {
+	public FiguraGeometrica(String nombre) {
 		this.nombre = nombre;
 	}
 	
 //	-----------------------Getters & Setters
-	public int getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 	
-	public void setNombre(int nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
 //	-----------------------Metodos abstractos
-	public abstract BigDecimal calcularArea();
+	public abstract String calcularArea();
 
-	public abstract BigDecimal calcularPerimetro();
+	public abstract String calcularPerimetro();
 
-	public abstract BigDecimal mostrarInfo();
+	public abstract String mostrarInfo();
 
 }
