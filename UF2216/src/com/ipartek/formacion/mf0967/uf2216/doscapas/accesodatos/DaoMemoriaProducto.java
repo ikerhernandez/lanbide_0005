@@ -37,7 +37,7 @@ public class DaoMemoriaProducto implements Dao<Producto> {
 
 	@Override
 	public Producto insertar(Producto producto) {
-		Long id = productos.size() == 0 ? 1L : productos.lastKey() + 1L;
+		Long id = productos.size() == 0 ? 1L : productos.lastKey() + 1L; // a ? b : c => if ? this : else
 		producto.setId(id);
 		productos.put(id, producto);
 

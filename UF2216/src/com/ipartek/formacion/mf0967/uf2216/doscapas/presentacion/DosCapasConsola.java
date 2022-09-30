@@ -135,6 +135,7 @@ public class DosCapasConsola {
 				}
 			} while (!correcto);
 		}
+		
 		correcto = false;
 		
 		do {
