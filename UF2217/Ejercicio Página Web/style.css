@@ -15,7 +15,7 @@ body{
 }
 #headernav{
     justify-content: space-around;
-    background-color: rgb(118, 145, 0);
+    background-color: #6b6d17;
     display: flex;
 }
 #headernav ul li{
@@ -34,46 +34,56 @@ body{
     padding: 10px;
 }
 #headernav ul li a:hover{
-    background-color: rgb(164, 201, 0);
+    background-color: #9EA123;
 }
 nav{
-    background-color: rgb(118, 145, 0);
+    background-color: #9EA123;
 }
 nav ul li{
     text-transform: uppercase;
     list-style: none;
-    margin: 5px;
+    padding: 2px;
+    margin-right: 6px;
 }
 nav ul{
     left: auto;
     display: flex;
-    margin: 0;
+    margin-top: 0;
+    padding: 0;
+    margin-left: 21px;
 }
 nav ul li a{
     text-decoration: none;
-    color: white;
-}
-nav ul li a:hover{
-    color: rgb(164, 201, 0);
+    color: #E4E682;
 }
 nav ul li a:focus{
-    color: black;
+    color: #35360B;
 }
 #left{
     margin: 30px;
     margin-right: 0;
     margin-bottom: 0;
-    width: 25%;
+    width: 20%;
 }
 #right{
     flex-direction: column;
-    width: 75%;
+    width: 80%;
+}
+#right nav{
+    width: 1000px;
+    height: 25px;
+    font-size: 18px;
 }
 #right img{
-    width: 100%;
+    width: 1000px;
+    height: 416px;
 }
-#right div{
+#right #bienvenida{
     padding: 40px;
+}
+#right p{
+    font-size: 21px;
+    color: #35360B;
 }
 #contain{
     display: flex;
@@ -82,10 +92,48 @@ nav ul li a:focus{
 }
 #logopie{
     display: block;
-    margin: auto;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 }
 #footerbar{
-    height: 20px;
+    height: 30px;
     width: 100%;
-    background-color: rgb(83, 102, 0);
+    background-color: #6b6d17;
+}
+#footercontent{
+    margin-bottom: 20px;
+    height: 120px;
+    width: 100%;
+    background-color: #9EA123;
+    display: flex;
+    color: #35360B;
+    line-height: 1.5;
+}
+#footercontent p{
+    width: 50%;
+    padding-left: 100px;
+}
+#footercontent p a{
+    color: #35360B;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+#cuadrosobreimg{
+    width: 462px;
+    height: 95px;
+    background: #f6f7d5;
+    opacity: 0.65;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    padding: 15px;
+    opacity: 0.65;
+}
+#cuadrosobreimg p{
+    font-size: 18px;
+    color: #35360B;
+    margin: 0;
 }
