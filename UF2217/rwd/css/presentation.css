@@ -106,7 +106,9 @@
 	
 		.gallery ul {
 			text-align:center;
-			
+			/* display: grid;
+			grid-template-columns: auto auto auto; */ 
+			/* CON GRID */
 		}
 	
 			.gallery li {
