@@ -32,6 +32,7 @@ window.addEventListener('DOMContentLoaded', async function(){
     //     {id : 3, nombre : "Prueba"}
     // ]
 
+    // Recogida de datos
     const respuesta = await fetch('http://localhost:3000/personas');
 
     console.log(respuesta);
@@ -39,9 +40,10 @@ window.addEventListener('DOMContentLoaded', async function(){
     const bdd = await respuesta.json();
 
     console.log(bdd);
+    // FIN recogida de datos
+    
 
- 
-
+    // Crear lista
     let ul = document.getElementById('lista');
 
     let li;
