@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+
+
+    <!-- JS -->
+    <script src="js/functions.js"></script>
+    <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+</head>
+
+<body>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navegador">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-shop"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" />
+                </svg>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav w-50">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Política de privacidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Localización</a>
+                    </li>
+                </ul>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Login Administrador
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal (Login Administrador)-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Iniciar Sesión</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contraseña</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido del mercado (Cards de productos) -->
+    <div id="content">
+        <div class="card">
+            <p id="oferta">20%</p>
+            <img src="https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/202110/01/00118723400018____15__600x600.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <del>
+                        <span>13,35 €</span>
+                    </del>
+                    <span>
+                        <span id="discount">12,95 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (18,50 € / Litro)
+                </p>
+                <p class="card-text">
+                    BEEFEATER ginebra inglesa botella 70 cl
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://i0.wp.com/frankfurtsantaanna.com/wp-content/uploads/2021/09/Coca-Cola.jpg?fit=1240%2C1240&ssl=1"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">0,82 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (2,48 € / Litro)
+                </p>
+                <p class="card-text">
+                    CocaCola Sabor Original 330ml
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://a1.soysuper.com/8bc68c03be8ef3b1e67af6874344192e.1500.0.0.0.wmark.84bcadc9.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">0,77 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (1,54 € / Kilo)
+                </p>
+                <p class="card-text">
+                    Macarron fino pasta 500g
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://chedrauimx.vtexassets.com/arquivos/ids/8015005/7509546052977_00.jpg?v=638007443363330000"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">37,80 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (0,04 € / mililitro)
+                </p>
+                <p class="card-text">
+                    AXION Líquido quitagrasas 900ml
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="data:image/jpeg;base64,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"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">5,85 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (29,25 € / Kilo)
+                </p>
+                <p class="card-text">
+                    Café soluble natural Nescafé Classic 200 g
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/img_pim_food/737611_00_1.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">0,99 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (0,99 € / Litro)
+                </p>
+                <p class="card-text">
+                    Zumo de naranja 1L
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://static.carrefour.es/hd_510x_/img_pim_food/003210_00_1.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">3,05 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (8,13 € / Kilo)
+                </p>
+                <p class="card-text">
+                    Cereales con chocolate Chocapic Nestlé 375 g
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://a2.soysuper.com/0525243b1f36f2e972f0f2504308ca5c.1500.0.0.0.wmark.ee7be24a.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">2,60 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (13,00 € / Kilo)
+                </p>
+                <p class="card-text">
+                    Nuez mondada natural 200g
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://a1.soysuper.com/3e33affd65076abee7852549798598cd.1500.0.0.0.wmark.4608727f.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">2,35 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (1,18 € / Kilo)
+                </p>
+                <p class="card-text">
+                    Yogur sabores Pack 16 x 125 g - 2 kg
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/202107/02/00120642900219____13__600x600.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">1,00 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (8,00 € / Kilo)
+                </p>
+                <p class="card-text">
+                    NESTLE EXTRAFINO Chocolate con leche tableta 125 g
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://a2.soysuper.com/2cb61a9ba0c3665a3d5669ec9faa6160.340.340.0.min.wmark.1f19f732.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">0,85 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (1,85 € / Kilo)
+                </p>
+                <p class="card-text">
+                    Pan de molde blanco Paquete 460g
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+        <div class="card">
+            <img src="https://a2.soysuper.com/d3961c6b2525ae3c247bc23cbec85e82.340.340.0.min.wmark.5a41cc58.jpg"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <div>
+                    <span>
+                        <span class="amount">2,16 €</span>
+                    </span>
+                </div>
+                <p class="pricebyL">
+                    (0,18 € / Unidad)
+                </p>
+                <p class="card-text">
+                    Huevos grandes L - 12 unidades
+                </p>
+                <input class="cantidad" type="number" value="1">
+            </div>
+            <button class="btn btn-success">AÑADIR AL CARRO</button>
+        </div>
+    </div>
+
+    <!-- Tabla de productos -->
+    <div id="adminTabla">
+        <div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                Dar de alta un producto nuevo
+            </button>
+        </div>
+
+        <h2>Tabla de productos</h2>
+        <table id="table_id" class="display">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>BEEFEATER ginebra inglesa botella 70 cl</td>
+                    <td>7,90 €</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>CocaCola Sabor Original 330ml</td>
+                    <td>0,82 €</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Macarron fino pasta 500g</td>
+                    <td>0,77 €</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>AXION Líquido quitagrasas 900ml</td>
+                    <td>37,80 €</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Café soluble natural Nescafé Classic 200 g</td>
+                    <td>8,85 €</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Zumo de naranja 1L</td>
+                    <td>0,99 €</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Cereales con chocolate Chocapic Nestlé 375 g</td>
+                    <td>3,05 €</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Nuez mondada natural 200g</td>
+                    <td>2,60 €</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Yogur sabores Pack 16 x 125 g - 2 kg</td>
+                    <td>2,35 €</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>NESTLE EXTRAFINO Chocolate con leche tableta 125 g</td>
+                    <td>1,00 €</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Pan de molde blanco Paquete 460g</td>
+                    <td>0,85 €</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Huevos grandes L - 12 unidades</td>
+                    <td>2,16 €</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal (Dar de alta un nuevo producto)-->
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Dar de alta un producto nuevo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">ID</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre del producto</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Precio del producto</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Añadir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <span>REDES SOCIALES</span>
+            <ul>
+                <li>
+                    <a href="https://es-es.facebook.com/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/?lang=es">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path
+                                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <span>ENLACES A</span>
+            <ul>
+                <li>
+                    <a class="nav-link" href="#">Política de privacidad</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#">Localización</a>
+                </li>
+            </ul>
+        </div>
+        <p>&copy; 2022 Iker_Hernandez</p>
+    </footer>
+
+    <!-- Botón para subir a la parte superior de la página -->
+    <a id="toTop" href="#navegador">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="red" class="bi bi-arrow-up-circle-fill"
+            viewBox="0 0 16 16">
+            <path
+                d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+        </svg>
+    </a>
+
+</body>
+
+</html>

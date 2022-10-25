@@ -1,18 +1,18 @@
 {
   "personas": [
     {
-        "id" : 1,
-        "nombre" : "Javier"
+      "id": 1,
+      "nombre": "Javier"
     },
     {
-        "id" : 2,
-        "nombre" : "Pepe"
+      "id": 2,
+      "nombre": "Pepe"
     },
     {
-        "id" : 3,
-        "nombre" : "Prueba"
+      "id": 3,
+      "nombre": "Prueba"
     }
-],
+  ],
   "posts": [
     {
       "id": 1,
