@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="5.0">
+  <servlet>
+    <description></description>
+    <display-name>CookieEscribir</display-name>
+    <servlet-name>CookieEscribir</servlet-name>
+    <servlet-class>com.ipartek.formacion.uf2218.CookieEscribir</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieEscribir</servlet-name>
+    <url-pattern>/CookieEscribir</url-pattern>
+  </servlet-mapping>
+  <display-name>UF2218mio</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Hola</servlet-name>
+    <servlet-class>com.ipartek.formacion.uf2218.Hola</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProductoAltaServlet</servlet-name>
+    <servlet-class>com.ipartek.formacion.uf2218.ProductoAltaServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProductoListado</servlet-name>
+    <servlet-class>com.ipartek.formacion.uf2218.ProductoListado</servlet-class>
+  </servlet>
+  <servlet>
+    <description></description>
+    <display-name>CookieLeer</display-name>
+    <servlet-name>CookieLeer</servlet-name>
+    <servlet-class>com.ipartek.formacion.uf2218.CookieLeer</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieLeer</servlet-name>
+    <url-pattern>/CookieLeer</url-pattern>
+  </servlet-mapping>
+</web-app>
