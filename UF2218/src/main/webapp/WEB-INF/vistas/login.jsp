@@ -15,4 +15,3 @@
 		<span class="error">${error}</span>
 	</form>
 </body>
-</html>
