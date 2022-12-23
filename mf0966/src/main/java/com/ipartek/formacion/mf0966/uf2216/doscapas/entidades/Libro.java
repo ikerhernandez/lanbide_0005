@@ -12,7 +12,7 @@ public class Libro {
 	private BigDecimal precio;
 	private Long descuento;
 
-	private Map<String, String> errores = new TreeMap<>();
+	private Map<String, String> errores = new TreeMap<String, String>();
 
 	public Libro(String id, String nombre, String precio, String descuento) {
 		setId(id);

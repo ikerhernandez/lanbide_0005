@@ -9,8 +9,4 @@
     <servlet-name>IndexServlet</servlet-name>
     <servlet-class>com.impartek.formacion.mf0966.uf2218.controladores.IndexServlet</servlet-class>
   </servlet>
-  <servlet-mapping>
-    <servlet-name>IndexServlet</servlet-name>
-    <url-pattern>/IndexServlet</url-pattern>
-  </servlet-mapping>
 </web-app>

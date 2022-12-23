@@ -31,7 +31,6 @@ public class DaoMySqlLibro implements Dao<Libro> {
 	}
 
 //	METODO para obtener todos los libros
-	@Override
 	public Iterable<Libro> obtenerTodos() {
 		
 		List<Libro> listalibros = new ArrayList<Libro>();
@@ -67,7 +66,6 @@ public class DaoMySqlLibro implements Dao<Libro> {
 	}
 
 //	METODO para obtener el libro por id
-	@Override
 	public Libro obtenerPorId(Long id) {
 		
 		Libro l = new Libro();
@@ -104,7 +102,6 @@ public class DaoMySqlLibro implements Dao<Libro> {
 	}
 
 //	METODO para insertar libro
-	@Override
 	public Libro insertar(Libro libro) {
 
 		try {
@@ -132,7 +129,6 @@ public class DaoMySqlLibro implements Dao<Libro> {
 	}
 
 //	METODO para modificar libro
-	@Override
 	public Libro modificar(Libro libro) {
 		
 		try {
@@ -161,7 +157,6 @@ public class DaoMySqlLibro implements Dao<Libro> {
 	}
 
 //	METODO para borrar libro
-	@Override
 	public void borrar(Long id) {
 		
 		try {
