@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Set;
-import java.util.TreeMap;
-
 import com.ipartek.formacion.mf0966ejemplo.modelos.Factura;
 import com.ipartek.formacion.mf0966ejemplo.modelos.Pedido.Linea;
 import com.ipartek.formacion.mf0966ejemplo.modelos.Producto;

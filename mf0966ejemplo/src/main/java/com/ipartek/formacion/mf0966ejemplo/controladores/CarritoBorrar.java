@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ConcurrentModificationException;
 
 import com.ipartek.formacion.mf0966ejemplo.modelos.Pedido;
-import com.ipartek.formacion.mf0966ejemplo.modelos.Producto;
 import com.ipartek.formacion.mf0966ejemplo.modelos.Pedido.Linea;
 
 import jakarta.servlet.ServletException;
